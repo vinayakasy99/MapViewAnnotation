@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JHY-iK-gCl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CollectionView-->
+        <scene sceneID="9bn-BV-r3R">
+            <objects>
+                <viewController title="CollectionView" id="JHY-iK-gCl" customClass="CollectionViewController" customModule="MapViewApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LVN-Jg-KHd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nl5-hw-mdt">
+                                <rect key="frame" x="20" y="592" width="374" height="90"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="aG9-cG-DuK"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mz0-rh-gDK">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Ud3-7G-QpA" customClass="MyCollectionViewCell" customModule="MapViewApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oAA-pw-2SR">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3K-AT-oQt">
+                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="C3K-AT-oQt" firstAttribute="centerX" secondItem="oAA-pw-2SR" secondAttribute="centerX" id="5de-TZ-xTl"/>
+                                                <constraint firstItem="C3K-AT-oQt" firstAttribute="top" secondItem="oAA-pw-2SR" secondAttribute="top" constant="15" id="GNi-QI-Qdg"/>
+                                                <constraint firstItem="C3K-AT-oQt" firstAttribute="centerY" secondItem="oAA-pw-2SR" secondAttribute="centerY" id="xbV-fT-Fo1"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="myLabel" destination="C3K-AT-oQt" id="o9F-pP-edm"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="JHY-iK-gCl" id="Trt-iV-L7p"/>
+                                    <outlet property="delegate" destination="JHY-iK-gCl" id="k5q-wf-c3R"/>
+                                </connections>
+                            </collectionView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QRi-lq-6uc">
+                                <rect key="frame" x="20" y="44" width="374" height="489"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QRi-lq-6uc" firstAttribute="top" secondItem="LXm-VD-LEm" secondAttribute="top" id="6T2-wi-pdH"/>
+                            <constraint firstItem="QRi-lq-6uc" firstAttribute="leading" secondItem="LXm-VD-LEm" secondAttribute="leading" constant="20" id="GWw-D7-Q0e"/>
+                            <constraint firstItem="nl5-hw-mdt" firstAttribute="trailing" secondItem="QRi-lq-6uc" secondAttribute="trailing" id="HKB-FW-B94"/>
+                            <constraint firstItem="LXm-VD-LEm" firstAttribute="bottom" secondItem="nl5-hw-mdt" secondAttribute="bottom" constant="180" id="aUl-3N-JIG"/>
+                            <constraint firstItem="LXm-VD-LEm" firstAttribute="trailing" secondItem="QRi-lq-6uc" secondAttribute="trailing" constant="20" id="chh-bQ-h2T"/>
+                            <constraint firstItem="nl5-hw-mdt" firstAttribute="top" secondItem="QRi-lq-6uc" secondAttribute="bottom" constant="59" id="qcW-vv-GSg"/>
+                            <constraint firstItem="nl5-hw-mdt" firstAttribute="leading" secondItem="QRi-lq-6uc" secondAttribute="leading" id="wpc-EI-gpG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LXm-VD-LEm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hdh-RK-8x7"/>
+                    <connections>
+                        <outlet property="mapView1" destination="QRi-lq-6uc" id="beM-sc-gEN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XiM-gU-xVn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1114.4927536231885" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+</document>
